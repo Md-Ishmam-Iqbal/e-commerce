@@ -10,6 +10,7 @@ import ExploreCategories from "../Components/ExploreCategories";
 import ProductsSlider from "../Components/ProductsSlider";
 import Catalog from "../Components/Catalog";
 import Testimonials from "../Components/Testimonials";
+import Loading from "../Components/Loading";
 
 import { useEffect } from "react";
 
@@ -32,7 +33,7 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
   }, [getGlobalProducts, products, getGlobalCategories, categories]);
 
   if (categoriesResults.isLoading || productResults.isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   // removed problematic api data element: SanDisk SSD PLUS 1TB Internal SSD
