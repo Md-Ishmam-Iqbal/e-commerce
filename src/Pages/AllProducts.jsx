@@ -43,9 +43,13 @@ function AllProducts({ products, categories }) {
                   alt={`Product image of ${product.title}`}
                 />
                 <div className="product-details">
-                  <div className="product-title">{product.title}</div>
+                  <div className="product-title no-txt-decoration">
+                    {product.title}
+                  </div>
                   <div className="product-category">{category}</div>
-                  <div className="product-price">{product.price} TK</div>
+                  <div className="product-price no-txt-decoration">
+                    {product.price} TK
+                  </div>
                 </div>
               </Link>
               <button className="cart-btn" onClick={handleButtonClick}>
