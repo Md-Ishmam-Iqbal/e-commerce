@@ -6,10 +6,12 @@ import fetchProducts from "../Functions/fetchProducts";
 import fetchCategories from "../Functions/fetchCategories";
 import removeProblematicProducts from "../Functions/removeProblematicProducts";
 
+import { slides } from "../data/carouselData.json";
+
 import ExploreCategories from "../Components/ExploreCategories";
 import ProductsSlider from "../Components/ProductsSlider";
 import Catalog from "../Components/Catalog";
-import Testimonials from "../Components/Testimonials";
+import Ads from "../Components/Ads";
 import Loading from "../Components/Loading";
 
 import { useEffect } from "react";
@@ -52,7 +54,7 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
         <ProductsSlider products={products} />
         <ExploreCategories categories={categories} />
         <Catalog products={products} categories={categories} />
-        <Testimonials />
+        <Ads data={slides} />
       </main>
       <footer className="footer">
         <div></div>

@@ -177,7 +177,7 @@ nav {
         border-radius: 100px;
         cursor: pointer;
         padding: 5px;
-        margin: 10px;
+        margin: 0 20px;
     }
 
     .slider-arrow:hover {
@@ -218,13 +218,6 @@ nav {
     }
 
     /* Products Slider end */
-
-
-    .ads {
-        background-color: grey;
-        height: 200px;
-    }
-
 
     /* Explore categories */
 
@@ -328,44 +321,93 @@ nav {
     
     /* Catalog end */
 
-    /* Testimonials start */
+    /* Ads start */
 
-    .testimonials {
-        background-color: #85a8c5;
-        height: 300px;
-    }
-
-    .carousel {
-        overflow: hidden;
-        width: 700px;
+    .ads {
+        height: 600px;
+        margin: 30px 20px 50px 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-
-    .inner {
-        white-space: nowrap;
-        transition: transform 0.3s;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .carousel-item {
-        display: inline-flex;
         align-items: center;
+    }
+    
+    .carousel {
+        display: flex;
         justify-content: center;
-        height: 200px;
-        background-color: #fff;
+        align-items: center;
+        position: relative;
+        margin: 10px;
     }
 
-    .carousel-item-text {
-        font-size: 1.15 rem;
-        margin: 40px 0 40px 0;
-        padding: 0 20px 0 20px;
-        white-space: normal;
-        color: #617d98;
+    .slide {
+        border: 0.5rem;
+        box-shadow: 0px 0px 7px #666;
+        height: 500px;
+        width: 800px;
+        border-radius: 10px;
+    }
+    
+    .slide-text {
+        position: absolute;
+        color: white;
+    }
+    
+    .slide-image {
+        height: inherit;
+        width: inherit;
     }
 
-    /* Testimonials end */
+
+    .slide-hidden {
+        display: none;
+    }
+
+    .arrow {
+        position: absolute;
+        color: black;
+        filter: drop-shadow(0px 0px 5px #555);
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .arrow:hover {
+        cursor: pointer;
+    }
+
+    .arrow-left {
+        left: 1rem;
+    }
+
+    .arrow-right {
+        right: 1rem;
+    }
+
+    .indicators {
+        display: flex;
+        position: absolute;
+        bottom: 1rem;
+    }
+
+    .indicator {
+        background-color: white;
+        height: 6px;
+        width: 2px;
+        border-radius: 30%;
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 5px #555;
+        margin: 0 0.2rem;
+        cursor: pointer;
+    }
+
+    .indicator-inactive {
+        background-color: gray;
+    }
+
+
+
+    /* Ads end */
 
 /* Landing end */
 
