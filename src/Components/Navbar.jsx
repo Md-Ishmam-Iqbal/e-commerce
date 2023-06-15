@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = ({ toggleSideBar }) => {
   return (
     <nav>
-      <button className="hb-button hover-drop-shadow" onClick={toggleSideBar}>
+      <button className="hamburger-button" onClick={toggleSideBar}>
         |||
       </button>
       <Link to={`/`} className="logo hover-drop-shadow no-txt-decoration">

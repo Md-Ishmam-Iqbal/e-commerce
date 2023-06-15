@@ -69,6 +69,19 @@ nav {
     position: fixed;
 }
 
+.hamburger-button {
+    margin-left: 10px;
+}
+
+.hamburger-button:hover {
+    cursor: pointer;
+    background-color: #d5cdc3;
+}
+
+.hamburger-button:active {
+    border: 0.2px solid #d5cdc3;
+}
+
 .logo {
     padding: 0 20px 0 20px;
     color: white;
