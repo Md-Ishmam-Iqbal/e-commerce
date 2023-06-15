@@ -15,7 +15,7 @@ const ProductsSlider = ({ products }) => {
             let capitalizedCategory = capitalizeFirstLetter(product.category);
             return (
               <Link
-                className="no-txt-decoration"
+                className="no-txt-decoration slider-item"
                 to={`/${product.category}/${product.title}`}
                 key={product.id}
               >

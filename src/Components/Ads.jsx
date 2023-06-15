@@ -35,7 +35,6 @@ const Ads = ({ data }) => {
               key={index}
               className={slide === index ? "slide" : "slide slide-hidden"}
             >
-              {/* <div className="slide-text">{item.text}</div> */}
               <img src={item.src} alt={item.alt} className="slide-image" />
             </div>
           );

@@ -6,11 +6,13 @@
 
 body {
     margin: 0;
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace;
+    height: 100%;
 }
 
 html {
     background: #FFFFFF;
+    height: 100%;
 }
 
 .br-hor-gold {
@@ -63,6 +65,8 @@ nav {
     position: sticky;
     top: 0;
     user-select: none;
+    z-index: 2;
+    position: fixed;
 }
 
 .logo {
@@ -111,6 +115,35 @@ nav {
 
 /* Navbar end */
 
+
+/* Sidebar */
+
+.sidebar {
+    background-color: cornflowerblue;
+    width: 150px;
+    height: 100%;
+    left: -150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    transition: left 0.3s ease-out;
+}
+
+.open {
+    left: 0;
+    /* Slide in when open */
+}
+
+.content {
+    margin: 0;
+    transition: margin 0.3s ease-out;
+}
+
+.left {
+    margin-left: 150px;
+}
+
+/* Sidebar end */
 
 /* Landing */
 
@@ -197,9 +230,15 @@ nav {
         border-radius: 100px;
         margin: 30px 30px 30px 30px;
     }
-
+    
     .slider::-webkit-scrollbar {
         display: none;
+    }
+    .slider-item {
+        border-radius: 20px;
+        border: solid 1.5px rgb(239, 237, 237);
+        margin: 0 10px;
+        padding: 6px;
     }
     
     .slider-image {
@@ -210,11 +249,11 @@ nav {
         display: inline-block;
         margin: 0 40px 0 40px;
         padding: 30px;
-        /* transition: transform 0.3s; */
     }
-
+    
     .slider-labels {
         color: black;
+        margin: 0 50px;
     }
 
     /* Products Slider end */
@@ -325,7 +364,7 @@ nav {
 
     .ads {
         height: 600px;
-        margin: 30px 20px 50px 20px;
+        margin: 20px 20px 50px 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -341,7 +380,7 @@ nav {
     }
 
     .slide {
-        border: 0.5rem;
+        border: 8px;
         box-shadow: 0px 0px 7px #666;
         height: 500px;
         width: 800px;
@@ -376,17 +415,17 @@ nav {
     }
 
     .arrow-left {
-        left: 1rem;
+        left: 10px;
     }
 
     .arrow-right {
-        right: 1rem;
+        right: 10px;
     }
 
     .indicators {
         display: flex;
         position: absolute;
-        bottom: 1rem;
+        bottom: 10px;
     }
 
     .indicator {
@@ -397,7 +436,7 @@ nav {
         border: none;
         outline: none;
         box-shadow: 0px 0px 5px #555;
-        margin: 0 0.2rem;
+        margin: 0 3px;
         cursor: pointer;
     }
 
@@ -631,6 +670,8 @@ footer {
 .bottom {
     height: 30%;
 }
+
+
 
 /* Footer styles end */
 

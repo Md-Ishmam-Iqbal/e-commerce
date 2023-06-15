@@ -5,6 +5,7 @@ import filterProductsByCategory from "../Functions/filterProductsByCategory";
 import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 
 import SearchFilter from "../Components/SearchFilter";
+import Footer from "../Components/Footer";
 
 // eslint-disable-next-line react/prop-types
 function ProductByCategory({ products }) {
@@ -71,9 +72,7 @@ function ProductByCategory({ products }) {
           );
         })}
       </section>
-      <footer>
-        <div className="bottom"></div>
-      </footer>
+      <Footer />
     </div>
   );
 }

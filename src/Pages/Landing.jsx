@@ -13,6 +13,7 @@ import ProductsSlider from "../Components/ProductsSlider";
 import Catalog from "../Components/Catalog";
 import Ads from "../Components/Ads";
 import Loading from "../Components/Loading";
+import Footer from "../Components/Footer";
 
 import { useEffect } from "react";
 
@@ -56,11 +57,7 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
         <Catalog products={products} categories={categories} />
         <Ads data={slides} />
       </main>
-      <footer className="footer">
-        <div></div>
-        <div className="bottom"></div>
-        <div>Electronics api products seem to be problematic</div>
-      </footer>
+      <Footer />
     </div>
   );
 }

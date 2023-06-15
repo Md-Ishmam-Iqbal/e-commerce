@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import SearchFilter from "../Components/SearchFilter";
 import ExploreCategories from "../Components/ExploreCategories";
+import Footer from "../Components/Footer";
 
 function AllProducts({ products, categories }) {
   const handleButtonClick = (event) => {
@@ -59,9 +60,7 @@ function AllProducts({ products, categories }) {
           );
         })}
       </section>
-      <footer>
-        <div className="bottom"></div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import ProductByCategory from "./Pages/ProductByCategory";
 import Product from "./Pages/Product";
 
 import { useState } from "react";
+import Sidebar from "./Components/Sidebar";
 
 const queryClient = new QueryClient({
   queries: {
@@ -18,6 +19,11 @@ const queryClient = new QueryClient({
 function App() {
   const [globalCategories, setGlobalCategories] = useState([]);
   const [globalProducts, setGlobalProducts] = useState([]);
+  const [sideBarOpen, setSideBarOpen] = useState(false);
+
+  const toggleSideBar = () => {
+    setSideBarOpen(!sideBarOpen);
+  };
 
   const getGlobalCategories = (categories) => {
     setGlobalCategories(categories);
@@ -27,10 +33,15 @@ function App() {
     setGlobalProducts(products);
   };
   return (
-    <div>
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <Navbar />
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <Navbar toggleSideBar={toggleSideBar} />
+        <Sidebar
+          products={globalProducts}
+          categories={globalCategories}
+          sideBarOpen={sideBarOpen}
+        />
+        <div className={`content ${sideBarOpen ? "left" : ""}`}>
           <Routes>
             <Route
               path="/"
@@ -64,9 +75,9 @@ function App() {
               element={<Product products={globalProducts} />}
             />
           </Routes>
-        </QueryClientProvider>
-      </BrowserRouter>
-    </div>
+        </div>
+      </QueryClientProvider>
+    </BrowserRouter>
   );
 }
 

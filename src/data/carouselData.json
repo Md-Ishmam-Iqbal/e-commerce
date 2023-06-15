@@ -2,18 +2,15 @@
     "slides": [
         {
             "src": "https://images.unsplash.com/photo-1511548774318-563182fe8d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGV0dGVyJTIwYXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-            "alt": "Image 1 for carousel",
-            "text": "Sponsors!!"
+            "alt": "Image 1 for carousel"
         },
         {
             "src": "https://images.unsplash.com/photo-1516906736502-5d3fedc3019a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "alt": "Image 2 for carousel",
-            "text": "Sponsors!!"
+            "alt": "Image 2 for carousel"
         },
         {
             "src": "https://images.unsplash.com/photo-1603811644423-d77ebe2e9550?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-            "alt": "Image 3 for carousel",
-            "text": "Sponsors!!"
+            "alt": "Image 3 for carousel"
         }
     ]
 }
