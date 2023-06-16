@@ -161,12 +161,18 @@ nav {
     margin-left: 200px;
 }
 
-.sidebar-category-wrapper {
-    margin-top: 30px;
+.sidebar-all-products {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
 }
 
+.sidebar-category-wrapper {
+    margin-top: 20px;
+}
 
-.sidebar-category-text {
+.sidebar-category {
     font-size: 11px;
     font-weight: 700;
     color: white;
@@ -184,6 +190,20 @@ nav {
     margin-bottom: 10px;
 }
 
+.sidebar-text {
+    padding: 1px 3px 1px 3px;
+}
+
+
+.sidebar-text:hover {
+    color: black;
+    background-color: white;
+}
+
+.sidebar-text:active {
+    color: black;
+    background-color: rgb(226, 225, 225);
+}
 
 
 /* Sidebar end */
@@ -249,15 +269,26 @@ nav {
         align-items: center;
     }
 
-    .slider-arrow {
+    .slider-icon {
         border-radius: 100px;
-        cursor: pointer;
         padding: 5px;
         margin: 0 20px;
+        visibility: visible;
+    }
+    
+    .slider-arrow:hover {
+        cursor: pointer;
+        background-color: rgb(103, 101, 101);
+        color: white;
     }
 
-    .slider-arrow:hover {
-        background-color: rgb(196, 193, 193);
+    .slider-block {
+        color: rgb(214, 212, 212);
+    }
+
+    .slider-block:hover {
+        color: rgb(247, 159, 159);
+        cursor: auto;
     }
     
     .slider {
@@ -277,6 +308,7 @@ nav {
     .slider::-webkit-scrollbar {
         display: none;
     }
+
     .slider-item {
         border-radius: 20px;
         border: solid 1.5px rgb(239, 237, 237);
@@ -422,7 +454,7 @@ nav {
         margin: 10px;
     }
 
-    .slide {
+    .ads-slide {
         border: 8px;
         box-shadow: 0px 0px 7px #666;
         height: 500px;
@@ -430,22 +462,22 @@ nav {
         border-radius: 10px;
     }
     
-    .slide-text {
+    .ads-slide-text {
         position: absolute;
         color: white;
     }
     
-    .slide-image {
+    .ads-slide-image {
         height: inherit;
         width: inherit;
     }
 
 
-    .slide-hidden {
+    .ads-slide-hidden {
         display: none;
     }
 
-    .arrow {
+    .ads-arrow {
         position: absolute;
         color: black;
         filter: drop-shadow(0px 0px 5px #555);
@@ -453,25 +485,25 @@ nav {
         border-radius: 15px;
     }
 
-    .arrow:hover {
+    .ads-arrow:hover {
         cursor: pointer;
     }
 
-    .arrow-left {
+    .ads-arrow-left {
         left: 10px;
     }
 
-    .arrow-right {
+    .ads-arrow-right {
         right: 10px;
     }
 
-    .indicators {
+    .ads-indicators {
         display: flex;
         position: absolute;
         bottom: 10px;
     }
 
-    .indicator {
+    .ads-slide-indicator {
         background-color: white;
         height: 6px;
         width: 2px;
@@ -483,7 +515,7 @@ nav {
         cursor: pointer;
     }
 
-    .indicator-inactive {
+    .ads-slide-indicator-inactive {
         background-color: gray;
     }
 

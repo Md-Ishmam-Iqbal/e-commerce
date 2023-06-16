@@ -17,7 +17,7 @@ const Sidebar = ({ products, categories, sideBarOpen }) => {
             <div key={index} className="sidebar-category-wrapper">
               <Link
                 to={`/${category}`}
-                className="sidebar-category-text no-txt-decoration"
+                className="sidebar-category no-txt-decoration sidebar-text"
               >
                 {capitalizedCategory}
               </Link>
@@ -27,7 +27,7 @@ const Sidebar = ({ products, categories, sideBarOpen }) => {
                     <Link
                       key={product.id}
                       to={`/${category}/${product.title}`}
-                      className="sidebar-product no-txt-decoration"
+                      className="sidebar-product no-txt-decoration sidebar-text"
                     >
                       {product.title}
                     </Link>

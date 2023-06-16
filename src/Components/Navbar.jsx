@@ -5,7 +5,11 @@ const Navbar = ({ toggleSideBar }) => {
   return (
     <nav>
       <button className="hamburger-button" onClick={toggleSideBar}>
-        |||
+        <svg width="25px" height="25px" viewBox="0 0 100 100">
+          <rect y="15" width="100" height="7"></rect>
+          <rect y="45" width="100" height="7"></rect>
+          <rect y="75" width="100" height="7"></rect>
+        </svg>
       </button>
       <Link to={`/`} className="logo hover-drop-shadow no-txt-decoration">
         E-commerce

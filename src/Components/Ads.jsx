@@ -24,7 +24,7 @@ const Ads = ({ data }) => {
     <section className="ads">
       <div className="carousel">
         <span
-          className="material-symbols-outlined arrow arrow-left noselect"
+          className="material-symbols-outlined ads-arrow ads-arrow-left noselect"
           onClick={previousSlide}
         >
           arrow_left_alt
@@ -33,26 +33,30 @@ const Ads = ({ data }) => {
           return (
             <div
               key={index}
-              className={slide === index ? "slide" : "slide slide-hidden"}
+              className={
+                slide === index ? "ads-slide" : "ads-slide ads-slide-hidden"
+              }
             >
-              <img src={item.src} alt={item.alt} className="slide-image" />
+              <img src={item.src} alt={item.alt} className="ads-slide-image" />
             </div>
           );
         })}
         <span
-          className="material-symbols-outlined arrow arrow-right noselect"
+          className="material-symbols-outlined ads-arrow ads-arrow-right noselect"
           onClick={nextSlide}
         >
           arrow_right_alt
         </span>
-        <span className="indicators">
+        <span className="ads-indicators">
           {data.map((__, index) => {
             return (
               <button
                 key={index}
                 onClick={() => setSlide(index)}
                 className={
-                  slide === index ? "indicator" : "indicator indicator-inactive"
+                  slide === index
+                    ? "ads-slide-indicator"
+                    : "ads-slide-indicator ads-slide-indicator-inactive"
                 }
               ></button>
             );
