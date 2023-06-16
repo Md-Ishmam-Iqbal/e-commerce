@@ -5,10 +5,10 @@ const Navbar = ({ toggleSideBar }) => {
   return (
     <nav>
       <button className="hamburger-button" onClick={toggleSideBar}>
-        <svg width="25px" height="25px" viewBox="0 0 100 100">
-          <rect y="15" width="100" height="7"></rect>
-          <rect y="45" width="100" height="7"></rect>
-          <rect y="75" width="100" height="7"></rect>
+        <svg width="22px" height="25px" viewBox="0 0 150 150">
+          <rect y="40" width="150" height="10"></rect>
+          <rect y="75" width="150" height="10"></rect>
+          <rect y="110" width="150" height="10"></rect>
         </svg>
       </button>
       <Link to={`/`} className="logo hover-drop-shadow no-txt-decoration">
@@ -22,7 +22,9 @@ const Navbar = ({ toggleSideBar }) => {
         <div className="hover-drop-shadow">ع</div>
       </div>
       {/* <div className="cart hover-drop-shadow">🛒 TK 0.00</div> */}
-      <div className="cart br-hor-gold">Cart 🛒</div>
+      <div className="cart br-hor-gold">
+        <span className="material-symbols-outlined">shopping_bag</span>
+      </div>
     </nav>
   );
 };
