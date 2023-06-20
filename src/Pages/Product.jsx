@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import removeProblematicProducts from "../Functions/removeProblematicProducts";
-
 import { useShoppingCart } from "../Context/ShoppingCartContext";
 
 import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
@@ -26,8 +24,6 @@ const Product = ({ products }) => {
   }
 
   let { product } = useParams();
-
-  removeProblematicProducts(products);
 
   let productElement = products.find((element) => element.title === product);
 
@@ -62,7 +58,7 @@ const Product = ({ products }) => {
         </section>
         <section key={product.id} className="product-block">
           {console.log(productElement)}
-          {getItemQuantity(productElement.id)}
+          {getItemQuantity(productElement)}
           <div className="product-image-wrapper">
             <img
               className="product-block-image zoom"

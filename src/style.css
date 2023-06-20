@@ -125,6 +125,7 @@ nav {
     border-right: none;
     border-left: none;
     height: inherit;
+    position: relative;
 }
 
 .cart-icon:hover {
@@ -135,6 +136,19 @@ nav {
 
 .cart-icon:active {
     background-color: rgb(188, 188, 188);
+}
+
+.quantity-label {
+    position: absolute;
+    right: 1px;
+    top: 0.1px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px;
+    margin: 0;
+    border-radius: 100px;
+    background-color: rgb(240, 97, 97);
+    color: white;
 }
 
 /* Navbar end */
@@ -220,16 +234,16 @@ nav {
 /* Sidebar end */
 
 
-/* Cart */
+/* Shopping Cart */
 
 .shopping-cart {
-    width: 200px;
+    width: 400px;
     height: 100%;
-    right: -200px;
+    right: -400px;
     position: fixed;
     z-index: 1;
     top: 0;
-    transition: right 0.3s ease-out;
+    transition: right 0.2s ease-out;
     font-size: 10px;
     padding-top: 70px;
     padding-right: 10px;
@@ -242,9 +256,8 @@ nav {
     /* Slide in when open */
 }
 
+/* Shopping Cart end */
 
-
-/* Cart end */
 
 /* Landing */
 
@@ -817,6 +830,5 @@ footer {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }

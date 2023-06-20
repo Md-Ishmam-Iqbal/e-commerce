@@ -22,6 +22,7 @@ function App() {
   const [globalCategories, setGlobalCategories] = useState([]);
   const [globalProducts, setGlobalProducts] = useState([]);
   const [sideBarOpen, setSideBarOpen] = useState(false);
+  const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
 
   const toggleSideBar = () => {
@@ -43,13 +44,21 @@ function App() {
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <ShoppingCartProvider>
-          <Navbar toggleSideBar={toggleSideBar} toggleCart={toggleCart} />
+          <Navbar
+            toggleSideBar={toggleSideBar}
+            toggleCart={toggleCart}
+            cart={cart}
+          />
           <Sidebar
             products={globalProducts}
             categories={globalCategories}
             sideBarOpen={sideBarOpen}
           />
-          <ShoppingCart cartOpen={cartOpen} />
+          <ShoppingCart
+            cart={cart}
+            cartOpen={cartOpen}
+            products={globalProducts}
+          />
           <div className={`content ${sideBarOpen ? "left" : ""}`}>
             <Routes>
               <Route

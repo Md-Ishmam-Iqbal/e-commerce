@@ -11,8 +11,8 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({ children }) {
   // const [cartItems, setCartItems] = useState([]);
 
-  function getItemQuantity(id) {
-    console.log(id, "get item quant");
+  function getItemQuantity(item) {
+    console.log(`ID: ${item.id}`, "get item quant");
   }
 
   function increaseCartQuantity(id) {
