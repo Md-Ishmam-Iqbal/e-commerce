@@ -6,17 +6,23 @@ import { useState } from "react";
 
 import removeProblematicProducts from "../Functions/removeProblematicProducts";
 
+import { useShoppingCart } from "../Context/ShoppingCartContext";
+
 import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 
 const Product = ({ products }) => {
+  const { getItemQuantity } = useShoppingCart();
   const [quantity, setQuantity] = useState(0);
 
-  function handleClickPlus() {
+  function increaseCartQuantity() {
     setQuantity(quantity + 1);
   }
-  function handleClickMinus() {
+  function decreaseCartQuantity() {
     if (quantity === 0) return;
     setQuantity(quantity - 1);
+  }
+  function removeFromCart() {
+    if (quantity !== 0) setQuantity(0);
   }
 
   let { product } = useParams();
@@ -55,6 +61,8 @@ const Product = ({ products }) => {
           </Link>
         </section>
         <section key={product.id} className="product-block">
+          {console.log(productElement)}
+          {getItemQuantity(productElement.id)}
           <div className="product-image-wrapper">
             <img
               className="product-block-image zoom"
@@ -63,19 +71,45 @@ const Product = ({ products }) => {
             />
           </div>
           <div className="product-block-order noselect">
-            <div className="quantity">
+            <div
+              className="quantity"
+              style={
+                quantity === 0
+                  ? { visibility: "hidden" }
+                  : { visbility: "visible" }
+              }
+            >
               Quantity:{" "}
-              <button onClick={handleClickMinus} className="quantity-operator">
+              <button
+                onClick={decreaseCartQuantity}
+                className="quantity-operator"
+              >
                 -
               </button>{" "}
-              {quantity}{" "}
-              <button onClick={handleClickPlus} className="quantity-operator">
+              <span className="product-page-quantity">{quantity}</span>
+              {" in cart "}
+              <button
+                onClick={increaseCartQuantity}
+                className="quantity-operator"
+              >
                 +
               </button>
             </div>
-            <button className="cart-btn product-page-cart-btn">
-              Add to Cart
-            </button>
+            {quantity === 0 ? (
+              <button
+                className="cart-btn product-page-cart-btn"
+                onClick={increaseCartQuantity}
+              >
+                Add to Cart
+              </button>
+            ) : (
+              <button
+                className="cart-btn product-page-remove-btn"
+                onClick={removeFromCart}
+              >
+                Remove
+              </button>
+            )}
           </div>
           <div className="product-block-details">
             <div className="product-block-title">{productElement.title}</div>

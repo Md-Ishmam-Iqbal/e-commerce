@@ -9,7 +9,7 @@ const Sidebar = ({ products, categories, sideBarOpen }) => {
   if (!categories || !products) return null;
   else
     return (
-      <section className={`sidebar ${sideBarOpen ? "open" : ""}`}>
+      <section className={`sidebar ${sideBarOpen ? "sidebar-open" : ""}`}>
         {categories.map((category, index) => {
           let filteredProducts = filterProductsByCategory(products, category);
           let capitalizedCategory = capitalizeFirstLetter(category);

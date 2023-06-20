@@ -6,7 +6,7 @@ import fetchProducts from "../Functions/fetchProducts";
 import fetchCategories from "../Functions/fetchCategories";
 import removeProblematicProducts from "../Functions/removeProblematicProducts";
 
-import { slides } from "../data/carouselData.json";
+import { slides } from "../Data/carouselData.json";
 
 import ExploreCategories from "../Components/ExploreCategories";
 import ProductsSlider from "../Components/ProductsSlider";
@@ -39,8 +39,7 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
     return <Loading />;
   }
 
-  // removed problematic api data element: SanDisk SSD PLUS 1TB Internal SSD
-  // removed problematic api data element: Men's casual premium slim fit t-shirts
+  // removed problematic api data elements
   removeProblematicProducts(products);
 
   return (

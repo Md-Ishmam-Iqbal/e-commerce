@@ -41,7 +41,7 @@ const ProductsSlider = ({ products }) => {
 
   return (
     <section className="slider-container">
-      <h1 className="slider-title">Featured Products</h1>
+      <h2 className="slider-title">Featured Products</h2>
       <div className="slider-wrapper noselect">
         <span
           className={`material-symbols-outlined slider-icon ${
