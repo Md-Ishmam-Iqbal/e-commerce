@@ -4,6 +4,4 @@ const productsArray = [
   { id: "3", title: "Product 1", price: 100 },
 ];
 
-function getProductData(id) {}
-
 export { productsArray };
