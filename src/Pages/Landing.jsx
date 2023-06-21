@@ -6,7 +6,7 @@ import fetchProducts from "../Functions/fetchProducts";
 import fetchCategories from "../Functions/fetchCategories";
 import removeProblematicProducts from "../Functions/removeProblematicProducts";
 
-import slides from "../Data/carouselData.json";
+import data from "../Data/carouselData.json";
 
 import ExploreCategories from "../Components/ExploreCategories";
 import ProductsSlider from "../Components/ProductsSlider";
@@ -54,7 +54,7 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
         <ProductsSlider products={products} />
         <ExploreCategories categories={categories} />
         <Catalog products={products} categories={categories} />
-        <Ads data={slides} />
+        <Ads data={data} />
       </main>
       <Footer />
     </div>
