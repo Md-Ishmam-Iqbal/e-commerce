@@ -7,15 +7,12 @@ import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 import SearchFilter from "../Components/SearchFilter";
 import Footer from "../Components/Footer";
 
+import { CartContext } from "../Context/ShoppingCartContext";
+import { useContext } from "react";
+
 // eslint-disable-next-line react/prop-types
 function ProductByCategory({ products }) {
-  const handleButtonClick = (event) => {
-    // Prevent the click event from propagating to the link
-    event.stopPropagation();
-
-    // Your custom button click logic here
-    console.log("Button clicked!");
-  };
+  const cart = useContext(CartContext);
   let { category } = useParams();
 
   let filteredProducts = filterProductsByCategory(products, category);
@@ -65,7 +62,7 @@ function ProductByCategory({ products }) {
                   </div>
                 </div>
               </Link>
-              <button className="cart-btn" onClick={handleButtonClick}>
+              <button className="cart-btn" onClick={cart.increaseCartQuantity}>
                 Add to Cart
               </button>
             </div>

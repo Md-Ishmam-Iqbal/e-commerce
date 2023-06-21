@@ -1,8 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 
+import { CartContext } from "../Context/ShoppingCartContext";
+import { useContext } from "react";
+
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ toggleSideBar, toggleCartOpen, cart }) => {
+const Navbar = ({ toggleSideBar, toggleCartOpen }) => {
+  const cart = useContext(CartContext);
   return (
     <nav>
       <button className="hamburger-button" onClick={toggleSideBar}>
@@ -24,7 +28,7 @@ const Navbar = ({ toggleSideBar, toggleCartOpen, cart }) => {
       </div>
       {/* <div className="cart hover-drop-shadow">🛒 TK 0.00</div> */}
       <div className="cart-icon br-hor-gold" onClick={toggleCartOpen}>
-        <div className="quantity-label">10</div>
+        <div className="cart-quantity-label">{cart.productsCount}</div>
         <span className="material-symbols-outlined">shopping_bag</span>
       </div>
     </nav>

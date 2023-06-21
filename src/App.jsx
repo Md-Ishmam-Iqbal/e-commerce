@@ -6,7 +6,7 @@ import Landing from "./Pages/Landing";
 import AllProducts from "./Pages/AllProducts";
 import ProductByCategory from "./Pages/ProductByCategory";
 import Product from "./Pages/Product";
-import { ShoppingCartProvider } from "./Context/ShoppingCartContext";
+import { CartProvider } from "./Context/ShoppingCartContext";
 
 import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
@@ -41,8 +41,8 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <ShoppingCartProvider>
+      <CartProvider>
+        <QueryClientProvider client={queryClient}>
           <Navbar
             toggleSideBar={toggleSideBar}
             toggleCartOpen={toggleCartOpen}
@@ -88,8 +88,8 @@ function App() {
               />
             </Routes>
           </div>
-        </ShoppingCartProvider>
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </CartProvider>
     </BrowserRouter>
   );
 }

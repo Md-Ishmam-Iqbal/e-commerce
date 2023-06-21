@@ -134,9 +134,9 @@ nav {
     background-color: rgb(188, 188, 188);
 }
 
-.quantity-label {
+.cart-quantity-label {
     position: absolute;
-    right: 1px;
+    right: 5px;
     top: 0.1px;
     font-size: 10px;
     font-weight: 700;
@@ -246,6 +246,7 @@ nav {
     background-color: rgb(75, 75, 75);
     background: linear-gradient(to right, rgb(27, 27, 27) 0%, rgb(89, 88, 88) 100%);
     color: white;
+    z-index: 1;
 }
 
 .shopping-cart-open {
@@ -619,6 +620,7 @@ nav {
 
 .product-box-container {
     text-align: center;
+    margin: 30px;
 }
 
 .product-box {

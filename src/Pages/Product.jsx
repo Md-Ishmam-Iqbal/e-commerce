@@ -2,30 +2,19 @@
 // Use React Query with id to display page
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
-import { useShoppingCart } from "../Context/ShoppingCartContext";
+import { CartContext } from "../Context/ShoppingCartContext";
+import { useContext } from "react";
 
 import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 
 const Product = ({ products }) => {
-  const { getItemQuantity } = useShoppingCart();
-  const [quantity, setQuantity] = useState(0);
-
-  function increaseCartQuantity() {
-    setQuantity(quantity + 1);
-  }
-  function decreaseCartQuantity() {
-    if (quantity === 0) return;
-    setQuantity(quantity - 1);
-  }
-  function removeFromCart() {
-    if (quantity !== 0) setQuantity(0);
-  }
-
+  const cart = useContext(CartContext);
   let { product } = useParams();
 
   let productElement = products.find((element) => element.title === product);
+
+  const productQuantity = cart.getProductQuantity(productElement.id);
 
   return (
     <div>
@@ -57,8 +46,6 @@ const Product = ({ products }) => {
           </Link>
         </section>
         <section key={product.id} className="product-block">
-          {console.log(productElement)}
-          {getItemQuantity(productElement)}
           <div className="product-image-wrapper">
             <img
               className="product-block-image zoom"
@@ -70,38 +57,38 @@ const Product = ({ products }) => {
             <div
               className="quantity"
               style={
-                quantity === 0
+                productQuantity === 0
                   ? { visibility: "hidden" }
                   : { visbility: "visible" }
               }
             >
               Quantity:{" "}
               <button
-                onClick={decreaseCartQuantity}
+                onClick={() => cart.decreaseCartQuantity(productElement.id)}
                 className="quantity-operator"
               >
                 -
               </button>{" "}
-              <span className="product-page-quantity">{quantity}</span>
+              <span className="product-page-quantity">{productQuantity}</span>
               {" in cart "}
               <button
-                onClick={increaseCartQuantity}
+                onClick={() => cart.increaseCartQuantity(productElement.id)}
                 className="quantity-operator"
               >
                 +
               </button>
             </div>
-            {quantity === 0 ? (
+            {productQuantity === 0 ? (
               <button
                 className="cart-btn product-page-cart-btn"
-                onClick={increaseCartQuantity}
+                onClick={() => cart.increaseCartQuantity(productElement.id)}
               >
                 Add to Cart
               </button>
             ) : (
               <button
                 className="cart-btn product-page-remove-btn"
-                onClick={removeFromCart}
+                onClick={() => cart.removeFromCart(productElement.id)}
               >
                 Remove
               </button>
