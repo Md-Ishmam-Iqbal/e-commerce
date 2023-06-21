@@ -1,7 +1,11 @@
+import { useShoppingCart } from "../Context/ShoppingCartContext";
+import Loading from "./Loading";
+
 /* eslint-disable react/prop-types */
-const ShoppingCart = ({ cartOpen, products, cart }) => {
-  if (!products.length) {
-    return;
+const ShoppingCart = ({ cartOpen, products }) => {
+  const { cartItems } = useShoppingCart();
+  if (!products) {
+    return <Loading />;
   }
 
   return (
@@ -9,8 +13,8 @@ const ShoppingCart = ({ cartOpen, products, cart }) => {
       className={`shopping-cart ${cartOpen ? "shopping-cart-open" : ""}`}
     >
       <h1>Shopping Cart</h1>
-      <h3>You have {cart.length} items in your cart</h3>
-      {products.map((product) => {
+      <h3>You have {cartItems.length} items in your cart</h3>
+      {/* {products.map((product) => {
         return (
           <div className="shopping-cart-item" key={product.id}>
             <h2>{product.title}</h2>
@@ -18,7 +22,7 @@ const ShoppingCart = ({ cartOpen, products, cart }) => {
             <h3>{product.quantity}</h3>
           </div>
         );
-      })}
+      })} */}
     </section>
   );
 };

@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ toggleSideBar, toggleCart, cart }) => {
+const Navbar = ({ toggleSideBar, toggleCartOpen, cart }) => {
   return (
     <nav>
       <button className="hamburger-button" onClick={toggleSideBar}>
@@ -23,7 +23,7 @@ const Navbar = ({ toggleSideBar, toggleCart, cart }) => {
         <div className="hover-drop-shadow">ع</div>
       </div>
       {/* <div className="cart hover-drop-shadow">🛒 TK 0.00</div> */}
-      <div className="cart-icon br-hor-gold" onClick={toggleCart}>
+      <div className="cart-icon br-hor-gold" onClick={toggleCartOpen}>
         <div className="quantity-label">10</div>
         <span className="material-symbols-outlined">shopping_bag</span>
       </div>

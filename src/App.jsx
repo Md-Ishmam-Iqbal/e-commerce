@@ -22,14 +22,13 @@ function App() {
   const [globalCategories, setGlobalCategories] = useState([]);
   const [globalProducts, setGlobalProducts] = useState([]);
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
 
   const toggleSideBar = () => {
     setSideBarOpen(!sideBarOpen);
   };
 
-  const toggleCart = () => {
+  const toggleCartOpen = () => {
     setCartOpen(!cartOpen);
   };
 
@@ -46,19 +45,14 @@ function App() {
         <ShoppingCartProvider>
           <Navbar
             toggleSideBar={toggleSideBar}
-            toggleCart={toggleCart}
-            cart={cart}
+            toggleCartOpen={toggleCartOpen}
           />
           <Sidebar
             products={globalProducts}
             categories={globalCategories}
             sideBarOpen={sideBarOpen}
           />
-          <ShoppingCart
-            cart={cart}
-            cartOpen={cartOpen}
-            products={globalProducts}
-          />
+          <ShoppingCart cartOpen={cartOpen} products={globalProducts} />
           <div className={`content ${sideBarOpen ? "left" : ""}`}>
             <Routes>
               <Route
