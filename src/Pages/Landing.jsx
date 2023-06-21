@@ -6,7 +6,7 @@ import fetchProducts from "../Functions/fetchProducts";
 import fetchCategories from "../Functions/fetchCategories";
 import removeProblematicProducts from "../Functions/removeProblematicProducts";
 
-import data from "../Data/carouselData.json";
+import data from "../data/carouselData.json";
 
 import ExploreCategories from "../Components/ExploreCategories";
 import ProductsSlider from "../Components/ProductsSlider";
