@@ -575,8 +575,6 @@ nav {
 /* Landing end */
 
 
-
-
 /* Products */
 .search-filter {
     display: flex;
@@ -592,7 +590,7 @@ nav {
     width: fit-content;
     height: fit-content;
     padding: 2px;
-    margin: 60px 0 0 50px;
+    margin: 100px 0 0 50px;
     border-radius: 5px;
 }
 

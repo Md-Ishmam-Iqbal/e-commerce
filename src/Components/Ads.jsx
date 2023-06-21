@@ -5,7 +5,7 @@ const Ads = ({ data }) => {
   const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
-    if (slide === data.length - 1) {
+    if (slide === data.slides.length - 1) {
       setSlide(0);
     } else {
       setSlide(slide + 1);
@@ -14,7 +14,7 @@ const Ads = ({ data }) => {
 
   const previousSlide = () => {
     if (slide === 0) {
-      setSlide(data.length - 1);
+      setSlide(data.slides.length - 1);
     } else {
       setSlide(slide - 1);
     }
@@ -29,7 +29,7 @@ const Ads = ({ data }) => {
         >
           arrow_left_alt
         </span>
-        {data.map((item, index) => {
+        {data.slides.map((item, index) => {
           return (
             <div
               key={index}
@@ -48,7 +48,7 @@ const Ads = ({ data }) => {
           arrow_right_alt
         </span>
         <span className="ads-indicators">
-          {data.map((__, index) => {
+          {data.slides.map((__, index) => {
             return (
               <button
                 key={index}
