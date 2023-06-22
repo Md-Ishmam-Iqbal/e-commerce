@@ -7,12 +7,8 @@ import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 import SearchFilter from "../Components/SearchFilter";
 import Footer from "../Components/Footer";
 
-import { CartContext } from "../Context/ShoppingCartContext";
-import { useContext } from "react";
-
 // eslint-disable-next-line react/prop-types
 function ProductByCategory({ products }) {
-  const cart = useContext(CartContext);
   let { category } = useParams();
 
   let filteredProducts = filterProductsByCategory(products, category);
@@ -62,9 +58,6 @@ function ProductByCategory({ products }) {
                   </div>
                 </div>
               </Link>
-              <button className="cart-btn" onClick={cart.increaseCartQuantity}>
-                Add to Cart
-              </button>
             </div>
           );
         })}
