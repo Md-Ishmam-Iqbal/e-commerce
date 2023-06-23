@@ -247,6 +247,7 @@ nav {
     background: linear-gradient(to right, rgb(27, 27, 27) 0%, rgb(89, 88, 88) 100%);
     color: white;
     z-index: 1;
+    overflow: auto;
 }
 
 .shopping-cart-open {
@@ -257,9 +258,9 @@ nav {
 .cart-item-container {
     padding: 5px;
     margin: 15px;
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: white;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     box-shadow: 0 0px 10px rgb(0, 0, 0);
 }
 
@@ -268,10 +269,15 @@ nav {
     align-items: center;
     flex-direction: column;
     color: black;
-    height: fit-content;
+    border: black dashed 0.2px;
     overflow: auto;
-    height: 70px;
+    margin: 2px;
+    height: fit-content;
     font-size: 8px;
+}
+
+.cart-item > h2 {
+    text-align: center;
 }
 
 .cart-item:hover {
@@ -317,11 +323,11 @@ nav {
 }
 
 .plus {
-    border-right: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .minus {
-    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 /* Shopping Cart end */

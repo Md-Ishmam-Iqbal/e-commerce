@@ -35,14 +35,14 @@ const ShoppingCart = ({ cartOpen, products }) => {
                     <div className="cart-quantity">
                       <button
                         onClick={() => cart.decreaseCartQuantity(product.id)}
-                        className="cart-quantity-operator plus"
+                        className="cart-quantity-operator minus"
                       >
                         -
                       </button>{" "}
                       <span className="item-quantity">{item.quantity}</span>
                       <button
                         onClick={() => cart.increaseCartQuantity(product.id)}
-                        className="cart-quantity-operator minus"
+                        className="cart-quantity-operator plus"
                       >
                         +
                       </button>
