@@ -379,16 +379,16 @@ nav {
     width: 100%;
     padding: 15px;
     height: fit-content;
-    background: linear-gradient(to left, rgb(26, 25, 25) 0%, rgb(216, 215, 215) 100%);
+    background: rgb(255, 255, 255);
 }
 
 .cart-checkout:hover {
-    background: linear-gradient(to left, rgb(163, 163, 163) 5%, rgb(235, 234, 234) 70%);
+    background: rgb(221, 221, 221);
     cursor: pointer;
 }
 
 .cart-checkout:active {
-    background: rgb(235, 234, 234);
+    background: rgb(190, 190, 190);
 }
 
 /* Shopping Cart end */

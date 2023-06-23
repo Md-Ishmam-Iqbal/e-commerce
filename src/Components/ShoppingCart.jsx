@@ -8,6 +8,22 @@ import { Link } from "react-router-dom";
 const ShoppingCart = ({ cartOpen, products }) => {
   const cart = useContext(CartContext);
 
+  function getTotalCost() {
+    let totalCost = 0;
+
+    let cartProducts = cart.items;
+
+    cartProducts.map((cartItem) => {
+      products.map((product) => {
+        if (product.id === cartItem.id) {
+          totalCost += product.price * cartItem.quantity;
+        }
+      });
+    });
+
+    return totalCost;
+  }
+
   if (!products) {
     return <Loading />;
   }
@@ -59,7 +75,8 @@ const ShoppingCart = ({ cartOpen, products }) => {
         ) : null}
       </div>
       <h3 className="total-bill">
-        <span>Total</span>0 TK
+        <span>Total</span>
+        {getTotalCost().toFixed(2)} TK
       </h3>
       <button className="cart-checkout">Checkout</button>
     </div>
