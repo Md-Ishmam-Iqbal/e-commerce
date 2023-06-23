@@ -16,12 +16,12 @@ const ShoppingCart = ({ cartOpen, products }) => {
     <div className={`shopping-cart ${cartOpen ? "shopping-cart-open" : ""}`}>
       <h1>Shopping Cart</h1>
       <h3>You have {cart.productsCount} items in your cart</h3>
-      <section className="cart-items">
-        {cart.items.map((item) => {
-          return products.map((product) => {
-            if (product.id === item.id) {
-              return (
-                <div key={product.id} className="cart-item-container">
+      {cart.items.map((item) => {
+        return products.map((product) => {
+          if (product.id === item.id) {
+            return (
+              <section key={product.id} className="cart-items">
+                <div className="cart-item-container">
                   <Link
                     to={`/${product.category}/${product.title}`}
                     className="cart-item no-txt-decoration"
@@ -45,18 +45,21 @@ const ShoppingCart = ({ cartOpen, products }) => {
                   </div>
                   <h3 className="cart-subtotal">
                     <span>Subtotal</span>
-                    {product.price} TK
+                    {product.price * item.quantity} TK
                   </h3>
                 </div>
-              );
-            }
-          });
-        })}
-        <button className="remove-all">Remove All</button>
-      </section>
+              </section>
+            );
+          }
+        });
+      })}
+      <div className="remove-all-container">
+        {cart.productsCount !== 0 ? (
+          <button className="remove-all">Remove All</button>
+        ) : null}
+      </div>
       <h3 className="total-bill">
-        <span>Total</span>
-        100 TK
+        <span>Total</span>0 TK
       </h3>
       <button className="cart-checkout">Checkout</button>
     </div>

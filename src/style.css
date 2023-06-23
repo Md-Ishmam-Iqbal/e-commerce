@@ -343,10 +343,27 @@ nav {
     border-right: 1px solid black;
 }
 
+.remove-all-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
 .remove-all {
-    margin: 10px 10px 10px 10px;
-    background: rgb(107, 106, 106);
+    padding: 10px 10px 10px 10px;
+    background: black;
     color: white;
+    margin: 10px 20px 20px 20px;
+}
+
+.remove-all:hover {
+    background: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+.remove-all:active {
+    background: rgb(49, 49, 49);
 }
 
 .total-bill {
@@ -354,6 +371,24 @@ nav {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
+}
+
+.cart-checkout {
+    align-items: center;
+    margin: 20px auto auto auto;
+    width: 100%;
+    padding: 15px;
+    height: fit-content;
+    background: linear-gradient(to left, rgb(26, 25, 25) 0%, rgb(216, 215, 215) 100%);
+}
+
+.cart-checkout:hover {
+    background: linear-gradient(to left, rgb(163, 163, 163) 5%, rgb(235, 234, 234) 70%);
+    cursor: pointer;
+}
+
+.cart-checkout:active {
+    background: rgb(235, 234, 234);
 }
 
 /* Shopping Cart end */
