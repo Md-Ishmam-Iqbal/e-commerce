@@ -24,15 +24,30 @@ const ShoppingCart = ({ cartOpen, products }) => {
             {products.map((product) => {
               if (product.id === item.id) {
                 return (
-                  <Link
-                    to={`/${product.category}/${product.title}`}
-                    key={product.id}
-                    className="cart-item no-txt-decoration"
-                  >
-                    <h2>{product.title}</h2>
-                    <h3>{product.price} TK</h3>
-                    <h3>Quantity: {item.quantity}</h3>
-                  </Link>
+                  <div key={product.id} className="cart-item-container">
+                    <Link
+                      to={`/${product.category}/${product.title}`}
+                      className="cart-item no-txt-decoration"
+                    >
+                      <h2>{product.title}</h2>
+                      <h3>{product.price} TK</h3>
+                    </Link>
+                    <div className="cart-quantity">
+                      <button
+                        onClick={() => cart.decreaseCartQuantity(product.id)}
+                        className="cart-quantity-operator plus"
+                      >
+                        -
+                      </button>{" "}
+                      <span className="item-quantity">{item.quantity}</span>
+                      <button
+                        onClick={() => cart.increaseCartQuantity(product.id)}
+                        className="cart-quantity-operator minus"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
                 );
               }
             })}
