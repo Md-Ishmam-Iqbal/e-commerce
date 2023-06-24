@@ -71,7 +71,9 @@ const ShoppingCart = ({ cartOpen, products }) => {
       })}
       <div className="remove-all-container">
         {cart.productsCount !== 0 ? (
-          <button className="remove-all">Remove All</button>
+          <button onClick={cart.removeAllFromCart} className="remove-all">
+            Remove All
+          </button>
         ) : null}
       </div>
       <h3 className="total-bill">
