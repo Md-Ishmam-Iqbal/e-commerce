@@ -8,47 +8,80 @@ import { Link } from "react-router-dom";
 const ShoppingCart = ({ cartOpen, products }) => {
   const cart = useContext(CartContext);
 
+  function getTotalCost() {
+    let totalCost = 0;
+
+    let cartProducts = cart.items;
+
+    cartProducts.map((cartItem) => {
+      products.map((product) => {
+        if (product.id === cartItem.id) {
+          totalCost += product.price * cartItem.quantity;
+        }
+      });
+    });
+
+    return totalCost;
+  }
+
   if (!products) {
     return <Loading />;
   }
 
   return (
-    <section
-      className={`shopping-cart ${cartOpen ? "shopping-cart-open" : ""}`}
-    >
+    <div className={`shopping-cart ${cartOpen ? "shopping-cart-open" : ""}`}>
       <h1>Shopping Cart</h1>
       <h3>You have {cart.productsCount} items in your cart</h3>
       {cart.items.map((item) => {
-        return (
-          <div key={item.id}>
-            {products.map((product) => {
-              if (product.id === item.id) {
-                return (
+        return products.map((product) => {
+          if (product.id === item.id) {
+            return (
+              <section key={product.id} className="cart-items">
+                <div className="cart-item-container">
                   <Link
                     to={`/${product.category}/${product.title}`}
-                    key={product.id}
                     className="cart-item no-txt-decoration"
                   >
                     <h2>{product.title}</h2>
-                    <h3>{product.price} TK</h3>
-                    <h3>Quantity: {item.quantity}</h3>
                   </Link>
-                );
-              }
-            })}
-          </div>
-        );
+                  <div className="cart-quantity">
+                    <button
+                      onClick={() => cart.decreaseCartQuantity(product.id)}
+                      className="cart-quantity-operator minus"
+                    >
+                      -
+                    </button>{" "}
+                    <span className="item-quantity">{item.quantity}</span>
+                    <button
+                      onClick={() => cart.increaseCartQuantity(product.id)}
+                      className="cart-quantity-operator plus"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <h3 className="cart-subtotal">
+                    <span>Subtotal</span>
+                    {product.price * item.quantity} TK
+                  </h3>
+                </div>
+              </section>
+            );
+          }
+        });
       })}
-      {/* {products.map((product) => {
-        return (
-          <div className="shopping-cart-item" key={product.id}>
-            <h2>{product.title}</h2>
-            <h3>{product.price}</h3>
-            <h3>{product.quantity}</h3>
-          </div>
-        );
-      })} */}
-    </section>
+      <div className="remove-all-container">
+        {cart.productsCount !== 0 ? (
+          <button onClick={cart.removeAllFromCart} className="remove-all">
+            Remove All
+          </button>
+        ) : null}
+      </div>
+      <h3 className="total-bill">
+        <span>Total</span>
+        {getTotalCost().toFixed(2)} TK
+      </h3>
+      <button className="cart-checkout">Checkout</button>
+    </div>
   );
 };
 

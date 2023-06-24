@@ -64,6 +64,10 @@ export function CartProvider({ children }) {
     );
   }
 
+  function removeAllFromCart() {
+    setCartProducts([]);
+  }
+
   const productsCount = cartProducts.reduce(
     (sum, product) => sum + product.quantity,
     0
@@ -72,6 +76,7 @@ export function CartProvider({ children }) {
   const contextValue = {
     items: cartProducts,
     productsCount,
+    removeAllFromCart,
     getProductQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,

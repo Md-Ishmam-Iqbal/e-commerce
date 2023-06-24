@@ -7,11 +7,6 @@ import ExploreCategories from "../Components/ExploreCategories";
 import Footer from "../Components/Footer";
 
 function AllProducts({ products, categories }) {
-  const handleButtonClick = (event) => {
-    // Prevent the click event from propagating to the link
-    event.stopPropagation();
-  };
-
   return (
     <div>
       <SearchFilter categories={categories} />
@@ -53,9 +48,6 @@ function AllProducts({ products, categories }) {
                   </div>
                 </div>
               </Link>
-              <button className="cart-btn" onClick={handleButtonClick}>
-                Add to Cart
-              </button>
             </div>
           );
         })}
