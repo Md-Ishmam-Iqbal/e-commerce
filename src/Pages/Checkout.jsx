@@ -16,6 +16,9 @@ function Checkout({ products }) {
               <section key={product.id}>
                 <h2>Product Name: {product.title}</h2>
                 <h2>Quantity: {item.quantity}</h2>
+                <button>
+                  <h3>Confirm Payment</h3>
+                </button>
               </section>
             );
           }

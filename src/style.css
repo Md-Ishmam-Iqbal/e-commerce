@@ -381,16 +381,16 @@ nav {
     padding: 8px;
     height: 45px;
     font-weight: 900;
-    background: rgb(218, 216, 216);
+    background: white;
 }
 
 .cart-footer-button:hover {
-    background: rgb(187, 185, 185);
+    background: rgb(231, 229, 229);
     cursor: pointer;
 }
 
 .cart-footer-button:active {
-    background: rgb(154, 153, 153);
+    background: rgb(210, 208, 208);
 }
 
 .checkout {
@@ -407,6 +407,7 @@ nav {
     width: 100%;
     justify-content: center;
 }
+
 
 /* Shopping Cart end */
 
