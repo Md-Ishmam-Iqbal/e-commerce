@@ -2,6 +2,7 @@ import Loading from "./Loading";
 
 import { CartContext } from "../Context/ShoppingCartContext";
 import { useContext } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
@@ -94,7 +95,10 @@ const ShoppingCart = ({ cartOpen, products }) => {
             >
               Back to Shopping
             </button>
-            <button className="checkout cart-footer-button">
+            <button
+              onClick={() => navigate("/checkout")}
+              className="checkout cart-footer-button"
+            >
               Checkout
               <span className="material-symbols-outlined">chevron_right</span>
             </button>
