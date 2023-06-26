@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Box, Modal } from "@mui/material";
 
-function Checkout({ products }) {
+function Checkout({ products, sideBarOpen }) {
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
@@ -17,28 +17,58 @@ function Checkout({ products }) {
   const items = cart.items;
 
   return (
-    <main>
-      <div className="checkout-page">
-        <h1>Checkout</h1>
+    <main
+      className={`checkout-page ${
+        sideBarOpen ? "checkout-page-right-margin" : ""
+      }`}
+    >
+      <h1>Checkout</h1>
+      <section className="checkout-grid">
+        <ul className="headings">
+          <li>Description</li>
+          <li>Quantity</li>
+          <li>Remove</li>
+          <li>Price</li>
+        </ul>
+        <ul className="checkout-product-details">
+          <li>Product Name: </li>
+          <li>Quantity: </li>
+          <li>
+            <button>Remove All</button>
+          </li>
+          <li>Price: </li>
+        </ul>
         {items.map((item) => {
           return products.map((product) => {
             if (product.id === item.id) {
               return (
-                <section key={product.id}>
-                  <h2>Product Name: {product.title}</h2>
-                  <h2>Quantity: {item.quantity}</h2>
-                  <button onClick={() => navigate("/")}>
-                    Back to Shopping
-                  </button>
-                  <button onClick={handleModalOpen}>
-                    <h3>Confirm Payment</h3>
-                  </button>
-                </section>
+                <ul key={product.id} className="checkout-product-details">
+                  <li>{product.title}</li>
+                  <li>{item.quantity}</li>
+                  <li>
+                    <button>Remove All</button>
+                  </li>
+                  <li>{product.price * item.quantity}</li>
+                </ul>
               );
             }
           });
         })}
-      </div>
+        <div className="checkout-buttons">
+          <button
+            onClick={() => navigate("/")}
+            className="checkout-button back-to-shopping"
+          >
+            Back to Shopping
+          </button>
+          <button
+            className="checkout-button confirm-order"
+            onClick={handleModalOpen}
+          >
+            <h3>Confirm Order</h3>
+          </button>
+        </div>
+      </section>
       <Modal
         open={modalOpen}
         onClose={handleModalClose}
