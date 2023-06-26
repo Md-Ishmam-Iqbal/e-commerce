@@ -43,21 +43,19 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
   removeProblematicProducts(products);
 
   return (
-    <div>
-      <main>
-        <section className="hero-image-container">
-          <div className="hero-image-text">Check out our new collection</div>
-          <Link to={`/products`} className="see-products">
-            <div className="see-products-text">See Products</div>
-          </Link>
-        </section>
-        <ProductsSlider products={products} />
-        <ExploreCategories categories={categories} />
-        <Catalog products={products} categories={categories} />
-        <Ads data={slides} />
-      </main>
+    <main>
+      <section className="hero-image-container">
+        <div className="hero-image-text">Check out our new collection</div>
+        <Link to={`/products`} className="see-products">
+          <div className="see-products-text">See Products</div>
+        </Link>
+      </section>
+      <ProductsSlider products={products} />
+      <ExploreCategories categories={categories} />
+      <Catalog products={products} categories={categories} />
+      <Ads data={slides} />
       <Footer />
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 const SearchFilter = ({ categories }) => {
-  console.log(categories);
   return (
     <header className="search-filter">
       <select className="filter">

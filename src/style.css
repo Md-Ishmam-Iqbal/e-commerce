@@ -47,6 +47,10 @@ html {
     cursor: pointer;
 }
 
+.hidden {
+    visibility: none;
+}
+
 /* Navbar */
 
 nav {
@@ -972,9 +976,20 @@ footer {
     height: 30%;
 }
 
-
-
 /* Footer styles end */
+
+
+
+/* Checkout styles */
+
+.checkout-page {
+    margin: 20px 0 0 0;
+    padding: 50px 0 0 200px;
+}
+
+
+/* Checkout styles end */
+
 
 .noselect {
     -webkit-touch-callout: none;
@@ -990,3 +1005,8 @@ footer {
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
+
+
+/* Responsive */
+

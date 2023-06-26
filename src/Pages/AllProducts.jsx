@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 
 function AllProducts({ products, categories }) {
   return (
-    <div>
+    <main>
       <SearchFilter categories={categories} />
       <ExploreCategories categories={categories} />
       <section className="route">
@@ -53,7 +53,7 @@ function AllProducts({ products, categories }) {
         })}
       </section>
       <Footer />
-    </div>
+    </main>
   );
 }
 
