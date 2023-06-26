@@ -12,8 +12,6 @@ const Product = ({ products }) => {
   const cart = useContext(CartContext);
   let { product } = useParams();
 
-  console.log(products);
-
   let productElement = products.find((element) => element.title === product);
 
   const productQuantity = cart.getProductQuantity(productElement.id);
