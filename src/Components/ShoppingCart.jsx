@@ -2,11 +2,14 @@ import Loading from "./Loading";
 
 import { CartContext } from "../Context/ShoppingCartContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const ShoppingCart = ({ cartOpen, products }) => {
   const cart = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   function getTotalCost() {
     let totalCost = 0;
@@ -31,7 +34,12 @@ const ShoppingCart = ({ cartOpen, products }) => {
   return (
     <div className={`shopping-cart ${cartOpen ? "shopping-cart-open" : ""}`}>
       <h1>Shopping Cart</h1>
-      <h3>You have {cart.productsCount} items in your cart</h3>
+      {cart.productsCount === 0 ? (
+        <h3>You have {cart.productsCount} items in your cart</h3>
+      ) : (
+        <h3>Total items: {cart.productsCount}</h3>
+      )}
+
       {cart.items.map((item) => {
         return products.map((product) => {
           if (product.id === item.id) {
@@ -69,18 +77,34 @@ const ShoppingCart = ({ cartOpen, products }) => {
           }
         });
       })}
-      <div className="remove-all-container">
-        {cart.productsCount !== 0 ? (
-          <button onClick={cart.removeAllFromCart} className="remove-all">
-            Remove All
-          </button>
-        ) : null}
-      </div>
-      <h3 className="total-bill">
-        <span>Total</span>
-        {getTotalCost().toFixed(2)} TK
-      </h3>
-      <button className="cart-checkout">Checkout</button>
+      {cart.productsCount !== 0 ? (
+        <div>
+          <div className="remove-all-container">
+            <button onClick={cart.removeAllFromCart} className="remove-all">
+              Remove All
+            </button>
+          </div>
+          <h3 className="total-bill">
+            <span>Total</span>
+            {getTotalCost().toFixed(2)} TK
+          </h3>
+          <div className="cart-footer">
+            <button
+              onClick={() => navigate("/")}
+              className="continue-shopping cart-footer-button"
+            >
+              Back to Shopping
+            </button>
+            <button
+              onClick={() => navigate("/checkout")}
+              className="checkout cart-footer-button"
+            >
+              Checkout
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };

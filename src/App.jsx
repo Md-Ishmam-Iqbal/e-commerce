@@ -6,6 +6,8 @@ import Landing from "./Pages/Landing";
 import AllProducts from "./Pages/AllProducts";
 import ProductByCategory from "./Pages/ProductByCategory";
 import Product from "./Pages/Product";
+import Checkout from "./Pages/Checkout";
+
 import { CartProvider } from "./Context/ShoppingCartContext";
 
 import { useState } from "react";
@@ -85,6 +87,10 @@ function App() {
               <Route
                 path="/:category/:product"
                 element={<Product products={globalProducts} />}
+              />
+              <Route
+                path="/checkout"
+                element={<Checkout products={globalProducts} />}
               />
             </Routes>
           </div>
