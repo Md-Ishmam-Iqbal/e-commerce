@@ -90,7 +90,12 @@ function App() {
               />
               <Route
                 path="/checkout"
-                element={<Checkout products={globalProducts} />}
+                element={
+                  <Checkout
+                    products={globalProducts}
+                    sideBarOpen={sideBarOpen}
+                  />
+                }
               />
             </Routes>
           </div>

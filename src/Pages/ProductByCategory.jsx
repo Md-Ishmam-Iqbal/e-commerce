@@ -14,7 +14,7 @@ function ProductByCategory({ products }) {
   let filteredProducts = filterProductsByCategory(products, category);
 
   return (
-    <div>
+    <main>
       <SearchFilter />
       <section className="route">
         <Link to={`/`} className="route-label no-txt-decoration box-shadow">
@@ -63,7 +63,7 @@ function ProductByCategory({ products }) {
         })}
       </section>
       <Footer />
-    </div>
+    </main>
   );
 }
 
