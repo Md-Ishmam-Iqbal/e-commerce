@@ -1104,7 +1104,7 @@ footer {
 .checkout-total {
     font-weight: 900;
     display: grid;
-    grid-template-areas: "total-title 1fr 1fr total-amount" ;
+    grid-template-areas: "total-title . . . total-amount";
     text-align: center;
     border-top: 0.2px solid black;
     padding-top: 15px;
