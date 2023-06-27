@@ -994,6 +994,7 @@ footer {
     scrollbar-width: none;
     background-color: rgb(238, 237, 237);
     box-shadow: 0 0 10px 6px rgb(190, 189, 189);
+    border-radius: 10px;
 }
 
 .checkout-page h1 {
@@ -1101,6 +1102,7 @@ footer {
 }
 
 .checkout-total {
+    font-weight: 900;
     display: grid;
     grid-template-areas: "total-title 1fr 1fr total-amount" ;
     text-align: center;
@@ -1115,6 +1117,7 @@ footer {
 }
 
 .checkout-button {
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
     width: 60%;
@@ -1133,6 +1136,39 @@ footer {
     cursor: pointer;
 }
 
+.modal-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-confirmed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 0;
+}
+
+.order-confirmed>span {
+    padding-top: 5px;
+}
+
+.modal-text-wrapper>p {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.checkout-empty {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.back-to-shopping {
+    align-self: center;
+}
 
 /* Checkout styles end */
 
