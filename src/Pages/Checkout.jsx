@@ -152,6 +152,7 @@ function Checkout({ products, sideBarOpen }) {
             className="checkout-button modal-shopping"
             onClick={() => {
               navigate("/");
+              cart.removeAllFromCart();
             }}
           >
             Back to Shopping
