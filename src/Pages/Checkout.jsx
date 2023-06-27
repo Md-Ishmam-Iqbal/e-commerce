@@ -8,7 +8,9 @@ import { Box, Modal } from "@mui/material";
 
 function Checkout({ products, sideBarOpen }) {
   const [modalOpen, setModalOpen] = useState(false);
-  const handleModalOpen = () => setModalOpen(true);
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
   const handleModalClose = () => {
     setModalOpen(false);
     cart.removeAllFromCart();
@@ -98,7 +100,7 @@ function Checkout({ products, sideBarOpen }) {
                       Remove All
                     </button>
                   </li>
-                  <li>{product.price * item.quantity}</li>
+                  <li>{product.price * item.quantity} TK</li>
                 </ul>
               );
             }
@@ -148,7 +150,9 @@ function Checkout({ products, sideBarOpen }) {
           </div>
           <button
             className="checkout-button modal-shopping"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+            }}
           >
             Back to Shopping
           </button>
