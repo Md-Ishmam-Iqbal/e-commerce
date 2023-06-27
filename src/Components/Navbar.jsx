@@ -32,7 +32,7 @@ const Navbar = ({ toggleSideBar, toggleCartOpen }) => {
             <div className="hover-drop-shadow">ع</div>
           </div>
           <div className="cart-icon br-hor-gold" onClick={toggleCartOpen}>
-            <div className="cart-quantity-label">{cart.productsCount}</div>
+            <div className="cart-quantity-label">{cart.items.length}</div>
             <span className="material-symbols-outlined">shopping_bag</span>
           </div>
         </nav>
