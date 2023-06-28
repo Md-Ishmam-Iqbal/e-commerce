@@ -7,7 +7,6 @@
 body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
-    height: 100%;
 }
 
 html {
@@ -1192,3 +1191,112 @@ footer {
 
 /* Responsive */
 
+
+@media screen and (max-width: 576px) {
+
+    /* Styles for screens up to 576px wide */
+    body {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Navbar */
+
+    nav {
+        top: 0px;
+        font-size: 11px;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        font-weight: 100;
+        user-select: none;
+    }
+
+    .hamburger-button {
+        display: none;
+    }
+
+    .logo {
+        padding: 0 5px 0px 20px;
+    }
+
+    .search {
+        width: 50%;
+        padding: 5px;
+        padding-left: 10px;
+        font-size: 9px;
+        margin-right: 20px;
+    }
+
+    .choose-language {
+        display: none;
+    }
+
+    .location {
+        display: none;
+    }
+
+    .cart-icon {
+        padding: 0 10px 0 10px;
+    }
+
+    .cart-quantity-label {
+        right: 10px;
+        top: 1px;
+        font-size: 6px;
+    }
+
+    /* Navbar end */
+
+    /* Adjust other styles as needed */
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+    /* Styles for screens between 577px and 768px wide */
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Adjust other styles as needed */
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    /* Styles for screens between 769px and 992px wide */
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 80%;
+        padding: 30px;
+    }
+
+    /* Adjust other styles as needed */
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+
+    /* Styles for screens between 993px and 1200px wide */
+    body {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 70%;
+        padding: 40px;
+    }
+
+    /* Adjust other styles as needed */
+}
