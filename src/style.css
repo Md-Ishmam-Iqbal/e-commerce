@@ -1253,7 +1253,96 @@ footer {
 
     /* Navbar end */
 
+    /* Products Slider */
 
+    .slider-container {
+        height: fit-content;
+        text-align: center;
+    }
+
+    .slider-icon {
+        border-radius: 100px;
+        padding: 5px;
+        margin: 0 10px;
+        visibility: visible;
+    }
+
+    .slider-arrow:hover {
+        cursor: pointer;
+        background-color: inherit;
+        color: inherit;
+    }
+
+    .slider-block {
+    color: rgb(247, 159, 159);
+    }
+
+    .slider-block:hover {
+        cursor: auto;
+    }
+
+    .slider {
+        border-radius: 30px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .slider-item {
+        width: fit-content;
+        height: fit-content;
+        border-radius: 20px;
+        border: solid 1.5px rgb(239, 237, 237);
+        margin: 0 3px;
+        padding: 3px;
+    }
+
+    .slider-image {
+        width: 125px;
+        border-radius: 5px;
+        height: 150px;
+        margin: 0 20px 0 20px;
+        padding: 20px;
+    }
+
+    .slider-labels {
+        margin: 0 20px;
+    }
+
+    /* Products Slider end */
+
+    /* Explore categories */
+
+    .explore-categories {
+        margin: 20px auto 50px auto;
+    }
+
+    .categories-grid {
+        row-gap: 5px;
+        width: 90%;
+        font-size: 10px;
+    }
+
+    .category-button {
+        padding: 15px;
+        margin: 5px;
+        background-color: rgb(58, 56, 56);
+        color: white;
+    }
+
+    .category-button:hover {
+        background-color: rgb(58, 56, 56);
+        cursor: pointer;
+    }
+
+    .category-button:active {
+        background-color: rgb(58, 56, 56);
+        cursor: pointer;
+    }
+
+    /* Explore categories end */
 
     /* Catalog */
 
@@ -1277,11 +1366,11 @@ footer {
         margin-bottom: 10px;
         font-weight: 900;
     }
-    
+
     .catalog-products-column {
         padding: 6px;
     }
-    
+
     .catalog-product {
         font-weight: 100;
         font-size: 10px;
@@ -1289,6 +1378,32 @@ footer {
 
     /* Catalog end */
 
+    /* Ads start */
+    
+    .ads {
+        height: fit-content;
+        margin: 50px 10px 100px 10px;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 10px;
+    }
+
+    .ads-slide {
+        border: 8px;
+        box-shadow: 0px 0px 7px #666;
+        height: 180px;
+        width: 320px;
+        border-radius: 10px;
+    }
+    
+    /* Ads end */
+
+    
     /* Adjust other styles as needed */
 }
 
