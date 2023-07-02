@@ -41,6 +41,7 @@ function App() {
   const getGlobalProducts = (products) => {
     setGlobalProducts(products);
   };
+
   return (
     <BrowserRouter>
       <CartProvider>
