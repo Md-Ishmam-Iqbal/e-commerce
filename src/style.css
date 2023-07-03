@@ -852,6 +852,27 @@ nav {
     border-radius: 3px;
 }
 
+.cart-btn {
+    color: black;
+    background-color: #E3DCD4;
+    font-size: 65%;
+    width: 20%;
+    height: fit-content;
+    margin: 2%;
+    padding: 1%;
+    margin: 20px 0 40px 0;
+    border-radius: 5px;
+}
+
+.cart-btn:hover {
+    background-color: #d5cdc3;
+    cursor: pointer;
+}
+
+.cart-btn:active {
+    filter: drop-shadow(0px 0px 3px rgb(167, 164, 164));
+}
+
 /* Products */
 
 
@@ -1552,12 +1573,14 @@ footer {
     }
 
     .route {
-        margin: 60px 0 0 30px;
-        font-size: 7px;
+        margin: 60px 0 0 10px;
+        font-size: 5px;
     }
     
     .route-label {
+        width: fit-content;
         height: fit-content;
+        padding: 1px 1px;
     }
 
     .route-label:hover {
@@ -1614,6 +1637,69 @@ footer {
     }
 
     /* Products */
+
+    /* Product block */
+
+    .product-block {
+        font-size: 7px;
+        margin: 20px 0 20px 0;
+        padding: 25px 100px;
+    }
+
+    .product-image-wrapper {
+        margin: 0 0 10px 0;
+    }
+
+    .product-block-image {
+        height: 120px;
+    }
+
+    .product-block-order {
+        margin: 20px 0 10px 0;
+        font-size: 7px;
+    }
+
+    .quantity-operator:active {
+        color: black;
+    }
+
+    .product-page-quantity {
+        font-size: 8px;
+    }
+
+    .product-page-cart-btn {
+        color: black;
+        background-color: #E3DCD4;
+        padding: 5px;
+        width: 60px;
+        height: 20px;
+        font-size: 7px;
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .product-page-remove-btn {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        font-size: 7px;
+        width: 60px;
+        padding: 5px;
+        height: 20px;
+        background-color: rgb(249, 197, 197)
+    }
+
+
+    .product-page-remove-btn:hover {
+        background-color: rgb(249, 197, 197)
+    }
+
+    .product-block-title {
+        font-size: 8px;
+    }
+    
+    
+    /* Product block end */
 
     
     /* Adjust other styles as needed */
@@ -2058,8 +2144,8 @@ footer {
     }
 
     .route {
-        margin: 60px 0 0 30px;
-        font-size: 9px;
+        margin: 60px 0 0 10px;
+        font-size: 7px;
     }
 
     .route-label {
@@ -2105,6 +2191,67 @@ footer {
         font-size: 9px;
         padding: 7px;
     }
+
+    /* Product block */
+
+    .product-block {
+        font-size: 9px;
+        margin: 20px 0 20px 0;
+        padding: 25px 100px;
+    }
+
+    .product-image-wrapper {
+        margin: 0 0 10px 0;
+    }
+
+    .product-block-image {
+        height: 160px;
+    }
+
+    .product-block-order {
+        margin: 20px 0 10px 0;
+        font-size: 9px;
+    }
+
+    .quantity-operator:active {
+        color: black;
+    }
+
+    .product-page-quantity {
+        font-size: 10px;
+    }
+
+    .product-page-cart-btn {
+        color: black;
+        background-color: #E3DCD4;
+        margin-top: 5px;
+        padding: 5px;
+        width: 60px;
+        height: 20px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+    .product-page-remove-btn {
+        margin-top: 5px;
+        font-size: 9px;
+        width: 60px;
+        padding: 5px;
+        height: 20px;
+        background-color: rgb(249, 197, 197)
+    }
+
+
+    .product-page-remove-btn:hover {
+        background-color: rgb(249, 197, 197)
+    }
+
+    .product-block-title {
+        font-size: 10px;
+    }
+
+
+    /* Product block end */
 
     /* Products */
 
@@ -2585,6 +2732,40 @@ footer {
     }
 
     /* Products */
+
+    /* Product block */
+
+    .product-block {
+        font-size: 10px;
+    }
+
+
+    .product-block-order {
+        margin: 20px 0 10px 0;
+        font-size: 10px;
+    }
+
+    .quantity-operator:active {
+        color: black;
+    }
+
+    .product-page-quantity {
+        font-size: 12px;
+    }
+
+    .product-page-remove-btn {
+        background-color: rgb(249, 197, 197)
+    }
+
+    .product-page-remove-btn:hover {
+        background-color: rgb(249, 197, 197)
+    }
+
+    .product-block-title {
+        font-size: 12px;
+    }
+    
+    /* Product block end */
 
 
     /* Adjust other styles as needed */
