@@ -100,7 +100,7 @@ function Checkout({ products, sideBarOpen }) {
                       Remove All
                     </button>
                   </li>
-                  <li>{product.price * item.quantity} TK</li>
+                  <li>{(product.price * item.quantity).toFixed(2)} TK</li>
                 </ul>
               );
             }
