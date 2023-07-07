@@ -6,35 +6,27 @@ import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 
 import SearchFilter from "../Components/SearchFilter";
 import Footer from "../Components/Footer";
+import Paths from "../Components/Paths";
 
 // eslint-disable-next-line react/prop-types
-function ProductByCategory({ products }) {
+function ProductByCategory({ products, categories }) {
   let { category } = useParams();
 
   let filteredProducts = filterProductsByCategory(products, category);
 
+  const paths = [
+    { title: "Home", link: "/" },
+    { title: "Products", link: "/products" },
+    {
+      title: `${(category = capitalizeFirstLetter(category))}`,
+      link: `/${category}`,
+    },
+  ];
+
   return (
     <main>
-      <SearchFilter />
-      <section className="route">
-        <Link to={`/`} className="route-label no-txt-decoration box-shadow">
-          Home
-        </Link>
-        &nbsp;{">"}&nbsp;
-        <Link
-          to={`/products`}
-          className="route-label no-txt-decoration box-shadow"
-        >
-          Products
-        </Link>
-        &nbsp;{">"}&nbsp;
-        <Link
-          to={`/${category}`}
-          className="route-label no-txt-decoration box-shadow"
-        >
-          {`${(category = capitalizeFirstLetter(category))}`}
-        </Link>
-      </section>
+      <SearchFilter categories={categories} />
+      <Paths paths={paths} />
       <section className="products-grid">
         {filteredProducts.map((product) => {
           return (

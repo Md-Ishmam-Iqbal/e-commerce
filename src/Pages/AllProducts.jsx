@@ -5,24 +5,19 @@ import { Link } from "react-router-dom";
 import SearchFilter from "../Components/SearchFilter";
 import ExploreCategories from "../Components/ExploreCategories";
 import Footer from "../Components/Footer";
+import Paths from "../Components/Paths";
 
 function AllProducts({ products, categories }) {
+  const paths = [
+    { title: "Home", link: "/" },
+    { title: "Products", link: "/products" },
+  ];
+
   return (
     <main>
       <SearchFilter categories={categories} />
       <ExploreCategories categories={categories} />
-      <section className="route">
-        <Link to={`/`} className="route-label no-txt-decoration box-shadow">
-          Home
-        </Link>
-        &nbsp;{">"}&nbsp;
-        <Link
-          to={`/products`}
-          className="route-label no-txt-decoration box-shadow"
-        >
-          Products
-        </Link>
-      </section>
+      <Paths paths={paths} />
       <section className="products-grid">
         {products.map((product) => {
           let category = product.category;

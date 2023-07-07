@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 // Use React Query with id to display page
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 import { CartContext } from "../Context/ShoppingCartContext";
 import { useContext } from "react";
 
 import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
+import Paths from "../Components/Paths";
 
 const Product = ({ products }) => {
   const cart = useContext(CartContext);
@@ -16,34 +16,22 @@ const Product = ({ products }) => {
 
   const productQuantity = cart.getProductQuantity(productElement.id);
 
+  const paths = [
+    { title: "Home", link: "/" },
+    { title: "Products", link: "/products" },
+    {
+      title: `${capitalizeFirstLetter(productElement.category)}`,
+      link: `/${productElement.category}`,
+    },
+    {
+      title: `${capitalizeFirstLetter(productElement.title)}`,
+      link: `/${productElement.category}/${productElement.title}`,
+    },
+  ];
+
   return (
     <main>
-      <section className="route">
-        <Link to={`/`} className="route-label no-txt-decoration box-shadow">
-          Home
-        </Link>
-        &nbsp;{">"}&nbsp;
-        <Link
-          to={`/products`}
-          className="route-label no-txt-decoration box-shadow"
-        >
-          Products
-        </Link>
-        &nbsp;{">"}&nbsp;
-        <Link
-          to={`/${productElement.category}`}
-          className="route-label no-txt-decoration box-shadow"
-        >
-          {`${capitalizeFirstLetter(productElement.category)}`}
-        </Link>
-        &nbsp;{">"}&nbsp;
-        <Link
-          to={`/${productElement.category}/${productElement.title}`}
-          className="route-label no-txt-decoration box-shadow"
-        >
-          {`${capitalizeFirstLetter(productElement.title)}`}
-        </Link>
-      </section>
+      <Paths paths={paths} />
       <section key={product.id} className="product-block">
         <div className="product-image-wrapper">
           <img

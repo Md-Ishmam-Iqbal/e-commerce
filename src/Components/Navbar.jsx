@@ -31,7 +31,7 @@ const Navbar = ({ toggleSideBar, toggleCartOpen }) => {
             <div className="hover-drop-shadow">বাং</div>|
             <div className="hover-drop-shadow">ع</div>
           </div>
-          <div className="cart-icon br-hor-gold" onClick={toggleCartOpen}>
+          <div className="cart-icon" onClick={toggleCartOpen}>
             <div className="cart-quantity-label">{cart.items.length}</div>
             <span className="material-symbols-outlined">shopping_bag</span>
           </div>

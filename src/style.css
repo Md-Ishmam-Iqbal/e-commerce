@@ -13,11 +13,6 @@ html {
     background: #FFFFFF;
 }
 
-.br-hor-gold {
-    border-right: solid white 1px;
-    border-left: solid white 1px;
-}
-
 .hover-drop-shadow:hover {
     color: rgb(203, 229, 246);
     filter: drop-shadow(0px 0px 10px white);
@@ -28,7 +23,6 @@ html {
 .box-shadow {
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
 }
-
 
 
 .no-txt-decoration {
