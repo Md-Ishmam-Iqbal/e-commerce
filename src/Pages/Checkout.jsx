@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 import { Box, Modal } from "@mui/material";
 
-function Checkout({ products, sideBarOpen }) {
+function Checkout({ sideBarOpen }) {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => {
     setModalOpen(true);

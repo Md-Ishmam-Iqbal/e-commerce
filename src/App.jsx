@@ -7,12 +7,12 @@ import AllProducts from "./Pages/AllProducts";
 import ProductByCategory from "./Pages/ProductByCategory";
 import Product from "./Pages/Product";
 import Checkout from "./Pages/Checkout";
+import Sidebar from "./Components/Sidebar";
+import ShoppingCart from "./Components/ShoppingCart";
 
 import { CartProvider } from "./Context/ShoppingCartContext";
 
 import { useState } from "react";
-import Sidebar from "./Components/Sidebar";
-import ShoppingCart from "./Components/ShoppingCart";
 
 const queryClient = new QueryClient({
   queries: {
@@ -21,8 +21,6 @@ const queryClient = new QueryClient({
 });
 
 function App() {
-  const [globalCategories, setGlobalCategories] = useState([]);
-  const [globalProducts, setGlobalProducts] = useState([]);
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
@@ -34,14 +32,6 @@ function App() {
     setCartOpen(!cartOpen);
   };
 
-  const getGlobalCategories = (categories) => {
-    setGlobalCategories(categories);
-  };
-
-  const getGlobalProducts = (products) => {
-    setGlobalProducts(products);
-  };
-
   return (
     <BrowserRouter>
       <CartProvider>
@@ -50,53 +40,17 @@ function App() {
             toggleSideBar={toggleSideBar}
             toggleCartOpen={toggleCartOpen}
           />
-          <Sidebar
-            products={globalProducts}
-            categories={globalCategories}
-            sideBarOpen={sideBarOpen}
-          />
-          <ShoppingCart cartOpen={cartOpen} products={globalProducts} />
+          <Sidebar sideBarOpen={sideBarOpen} />
+          <ShoppingCart cartOpen={cartOpen} />
           <div className={`content ${sideBarOpen ? "left" : ""}`}>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <Landing
-                    getGlobalCategories={getGlobalCategories}
-                    getGlobalProducts={getGlobalProducts}
-                  />
-                }
-              />
-              <Route
-                path="/products"
-                element={
-                  <AllProducts
-                    products={globalProducts}
-                    categories={globalCategories}
-                  />
-                }
-              />
-              <Route
-                path="/:category"
-                element={
-                  <ProductByCategory
-                    products={globalProducts}
-                    categories={globalCategories}
-                  />
-                }
-              />
-              <Route
-                path="/:category/:product"
-                element={<Product products={globalProducts} />}
-              />
+              <Route path="/" element={<Landing />} />
+              <Route path="/products" element={<AllProducts />} />
+              <Route path="/:category" element={<ProductByCategory />} />
+              <Route path="/:category/:product" element={<Product />} />
               <Route
                 path="/checkout"
-                element={
-                  <Checkout
-                    products={globalProducts}
-                    sideBarOpen={sideBarOpen}
-                  />
-                }
+                element={<Checkout sideBarOpen={sideBarOpen} />}
               />
             </Routes>
           </div>

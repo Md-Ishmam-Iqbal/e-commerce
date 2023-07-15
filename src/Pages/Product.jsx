@@ -8,7 +8,8 @@ import { useContext } from "react";
 import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 import Paths from "../Components/Paths";
 
-const Product = ({ products }) => {
+const Product = () => {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
   const cart = useContext(CartContext);
   let { product } = useParams();
 

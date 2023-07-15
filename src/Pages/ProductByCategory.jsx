@@ -9,7 +9,10 @@ import Footer from "../Components/Footer";
 import Paths from "../Components/Paths";
 
 // eslint-disable-next-line react/prop-types
-function ProductByCategory({ products, categories }) {
+function ProductByCategory() {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+  const categories = JSON.parse(localStorage.getItem("categories")) || [];
+
   let { category } = useParams();
 
   let filteredProducts = filterProductsByCategory(products, category);

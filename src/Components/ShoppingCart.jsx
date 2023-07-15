@@ -1,13 +1,30 @@
 import Loading from "./Loading";
 
 import { CartContext } from "../Context/ShoppingCartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-const ShoppingCart = ({ cartOpen, products }) => {
+const ShoppingCart = ({ cartOpen }) => {
   const cart = useContext(CartContext);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        setProducts(products);
+      } catch (error) {
+        console.error(
+          "Error fetching products in ShoppinCart component",
+          error
+        );
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const location = useLocation();
   const currentPath = location.pathname;

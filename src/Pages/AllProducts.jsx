@@ -7,7 +7,10 @@ import ExploreCategories from "../Components/ExploreCategories";
 import Footer from "../Components/Footer";
 import Paths from "../Components/Paths";
 
-function AllProducts({ products, categories }) {
+function AllProducts() {
+  const products = JSON.parse(localStorage.getItem("products")) || [];
+  const categories = JSON.parse(localStorage.getItem("categories")) || [];
+
   const paths = [
     { title: "Home", link: "/" },
     { title: "Products", link: "/products" },

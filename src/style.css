@@ -782,7 +782,7 @@ nav {
     align-items: center;
     flex-direction: column;
     margin: 5px;
-    padding: 5px;
+    padding: 20px;
     width: 85%;
     height: 540px;
     background-color: white;
@@ -796,7 +796,7 @@ nav {
 .product-box:hover {
     transform: scale(1.01);
     cursor: pointer;
-    box-shadow: 0px 3px 8px 3px rgba(80, 80, 80, 0.3);
+    box-shadow: 0px 2px 8px 3px rgba(80, 80, 80, 0.3);
 }
 
 .product-image {

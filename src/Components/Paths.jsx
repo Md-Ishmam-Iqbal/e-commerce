@@ -16,21 +16,6 @@ const Paths = ({ paths }) => {
       ))}
     </section>
   );
-
-  //   return (
-  //     <div>
-  //       <Link to={`/`} className="route-label no-txt-decoration box-shadow">
-  //         Home
-  //       </Link>
-  //       &nbsp;{">"}&nbsp;
-  //       <Link
-  //         to={`/products`}
-  //         className="route-label no-txt-decoration box-shadow"
-  //       >
-  //         Products
-  //       </Link>
-  //     </div>
-  //   );
 };
 
 export default Paths;

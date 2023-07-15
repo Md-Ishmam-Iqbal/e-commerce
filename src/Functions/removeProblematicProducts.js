@@ -28,4 +28,5 @@ export default function removeProblematicProducts(products) {
       products.splice(i, 1);
     }
   }
+  return products;
 }

@@ -6,10 +6,28 @@ import capitalizeFirstLetter from "../Functions/capitalizeFirstLetter";
 import { useLocation } from "react-router-dom";
 
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const Sidebar = ({ products, categories, sideBarOpen }) => {
+const Sidebar = ({ sideBarOpen }) => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        const categories = JSON.parse(localStorage.getItem("categories")) || [];
+        setProducts(products);
+        setCategories(categories);
+      } catch (error) {
+        console.error("Error fetching products in Sidebar component", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const isCheckoutPage = currentPath === "/checkout";
 

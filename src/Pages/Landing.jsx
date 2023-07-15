@@ -17,7 +17,7 @@ import Footer from "../Components/Footer";
 
 import { useEffect } from "react";
 
-function LandingPage({ getGlobalProducts, getGlobalCategories }) {
+function LandingPage() {
   const productResults = useQuery(["products"], fetchProducts, {
     staleTime: Infinity,
   });
@@ -30,17 +30,17 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
 
   useEffect(() => {
     if (products || categories) {
-      getGlobalProducts(products);
-      getGlobalCategories(categories);
+      localStorage.setItem("products", JSON.stringify(products));
+      localStorage.setItem("categories", JSON.stringify(categories));
     }
-  }, [getGlobalProducts, products, getGlobalCategories, categories]);
+  }, [products, categories]);
 
   if (categoriesResults.isLoading || productResults.isLoading) {
     return <Loading />;
   }
 
-  // removed problematic api data elements
-  removeProblematicProducts(products);
+  // Removed problematic API data elements
+  const filteredProducts = removeProblematicProducts(products);
 
   return (
     <div>
@@ -51,9 +51,9 @@ function LandingPage({ getGlobalProducts, getGlobalCategories }) {
             <div className="see-products-text">See Products</div>
           </Link>
         </section>
-        <ProductsSlider products={products} />
+        <ProductsSlider products={filteredProducts} />
         <ExploreCategories categories={categories} />
-        <Catalog products={products} categories={categories} />
+        <Catalog products={filteredProducts} categories={categories} />
         <Ads data={data} />
       </main>
       <Footer />
